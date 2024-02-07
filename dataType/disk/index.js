@@ -41,5 +41,32 @@ function list(str) {
 }
 ;
 ;
-const object = backPack.get();
-// console.log(object);
+const seat = "dkslk" /* SeatChoice.AISLE */;
+// console.log( typeof seat);
+class Basket {
+    constructor(name) {
+        this.name = name;
+    }
+    getBasketName() {
+        return this.name;
+    }
+    get getCount() {
+        return Basket._count;
+    }
+    set setName(newName) {
+        this.name = newName;
+    }
+}
+Basket._count = 0;
+class SuperBasket extends Basket {
+    constructor(name, req) {
+        super(name);
+        this.required = req;
+    }
+    static lowerCase(name) {
+        return this._count.toString();
+    }
+}
+;
+const superBasket = new SuperBasket("ajy", 10);
+console.log(SuperBasket.lowerCase("sa"));

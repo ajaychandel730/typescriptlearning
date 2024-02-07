@@ -93,9 +93,59 @@ interface BackPack<Type> {
 
 
 
-declare const backPack:BackPack<string>;
-const object = backPack.get();
+// declare const backPack:BackPack<string>;
+// const object = backPack.get();
 // console.log(object);
+
+// enums
+const enum SeatChoice{
+    AISLE = "dkslk",
+    MIDDLE = 3,
+    WINDOW
+}
+
+const seat = SeatChoice.AISLE;
+// console.log( typeof seat);
+
+class Basket{
+    static _count = 0;
+    constructor(
+       public name:string, 
+        ){}
+
+      public getBasketName():string{
+        return this.name;
+     }   
+
+     get getCount():number{
+        return Basket._count;
+     }
+
+     set setName(newName:string){
+        this.name = newName;
+    }
+}
+
+
+class SuperBasket extends Basket{
+    required;
+    constructor(name:string, req:number){
+        super(name);
+        this.required = req;
+    }
+
+    static lowerCase(name:string):string{
+        return this._count.toString();
+    }
+};
+
+const superBasket = new SuperBasket("ajy", 10);
+console.log(SuperBasket.lowerCase("sa"));
+
+
+
+
+
 
 
 
